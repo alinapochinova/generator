@@ -1,0 +1,102 @@
+\doxysection{MLCG\+\_\+\+XOR Class Reference}
+\hypertarget{class_m_l_c_g___x_o_r}{}\label{class_m_l_c_g___x_o_r}\index{MLCG\_XOR@{MLCG\_XOR}}
+
+
+Модифицированный LCG с нелинейным перемешиванием (MLCG-\/\+XOR).  
+
+
+
+
+{\ttfamily \+\#include $<$modified\+\_\+generators.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_m_l_c_g___x_o_r_a06149311e9eb6863f9d9dfb7691e06ae}\label{class_m_l_c_g___x_o_r_a06149311e9eb6863f9d9dfb7691e06ae} 
+using {\bfseries result\+\_\+type} = uint64\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_m_l_c_g___x_o_r_a4d05f55d7efd43a9aed69b19a80c1bf9}{MLCG\+\_\+\+XOR}} (uint64\+\_\+t seed=123456789)
+\begin{DoxyCompactList}\small\item\em Конструктор. \end{DoxyCompactList}\item 
+uint64\+\_\+t \doxymbox{\hyperlink{class_m_l_c_g___x_o_r_ae7628c61b92e47dfcfe979d7251f6825}{next}} ()
+\begin{DoxyCompactList}\small\item\em Генерирует 64-\/битное псевдослучайное число. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_m_l_c_g___x_o_r_a658c5b59d6df38047c469557f74c7499}\label{class_m_l_c_g___x_o_r_a658c5b59d6df38047c469557f74c7499} 
+static constexpr uint64\+\_\+t {\bfseries min} ()
+\begin{DoxyCompactList}\small\item\em Минимальное значение, возвращаемое \doxylink{class_m_l_c_g___x_o_r_ae7628c61b92e47dfcfe979d7251f6825}{next()}. \end{DoxyCompactList}\item 
+\Hypertarget{class_m_l_c_g___x_o_r_a7dce5f0c9d08f421d4aa56bd1228fabd}\label{class_m_l_c_g___x_o_r_a7dce5f0c9d08f421d4aa56bd1228fabd} 
+static constexpr uint64\+\_\+t {\bfseries max} ()
+\begin{DoxyCompactList}\small\item\em Максимальное значение, возвращаемое \doxylink{class_m_l_c_g___x_o_r_ae7628c61b92e47dfcfe979d7251f6825}{next()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Модифицированный LCG с нелинейным перемешиванием (MLCG-\/\+XOR). 
+
+Классический LCG:\+ X\+\_\+\{n+1\} = (a \texorpdfstring{$\ast$}{*} X\+\_\+n + c) mod 2\texorpdfstring{$^\wedge$}{\string^}64. Модификации:\+
+\begin{DoxyItemize}
+\item Модуль 2\texorpdfstring{$^\wedge$}{\string^}64 за счёт естественного переполнения uint64\+\_\+t.
+\item Параметры a и c подобраны для полного периода 2\texorpdfstring{$^\wedge$}{\string^}64.
+\item После каждого шага применяется нелинейное перемешивание (XOR и сдвиги), устраняющее корреляцию младших битов. 
+\end{DoxyItemize}
+
+\label{class_m_l_c_g___x_o_r_doc-constructors}
+\Hypertarget{class_m_l_c_g___x_o_r_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_m_l_c_g___x_o_r_a4d05f55d7efd43a9aed69b19a80c1bf9}\index{MLCG\_XOR@{MLCG\_XOR}!MLCG\_XOR@{MLCG\_XOR}}
+\index{MLCG\_XOR@{MLCG\_XOR}!MLCG\_XOR@{MLCG\_XOR}}
+\doxysubsubsection{\texorpdfstring{MLCG\_XOR()}{MLCG\_XOR()}}
+{\footnotesize\ttfamily \label{class_m_l_c_g___x_o_r_a4d05f55d7efd43a9aed69b19a80c1bf9} 
+MLCG\+\_\+\+XOR::\+\+MLCG\+\_\+\+XOR (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{seed}{ = {\ttfamily 123456789}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор. 
+
+Конструктор:\+ сохраняет начальное состояние.
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & Начальное значение (по умолчанию 123456789).\\
+\hline
+{\em seed} & начальное значение (по умолчанию 123456789) \\
+\hline
+\end{DoxyParams}
+
+
+\label{class_m_l_c_g___x_o_r_doc-func-members}
+\Hypertarget{class_m_l_c_g___x_o_r_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_m_l_c_g___x_o_r_ae7628c61b92e47dfcfe979d7251f6825}\index{MLCG\_XOR@{MLCG\_XOR}!next@{next}}
+\index{next@{next}!MLCG\_XOR@{MLCG\_XOR}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \label{class_m_l_c_g___x_o_r_ae7628c61b92e47dfcfe979d7251f6825} 
+uint64\+\_\+t MLCG\+\_\+\+XOR::\+next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Генерирует 64-\/битное псевдослучайное число. 
+
+Генерирует следующее псевдослучайное 64-\/битное число.
+
+\begin{DoxyReturn}{Returns}
+64-\/битное число, равномерно распределённое в \+[0, 2\texorpdfstring{$^\wedge$}{\string^}64-\/1]\+.
+\end{DoxyReturn}
+Шаги:\+
+\begin{DoxyEnumerate}
+\item Выполняется LCG-\/шаг:\+ state = A \texorpdfstring{$\ast$}{*} state + C. Переполнение uint64\+\_\+t автоматически берёт результат по модулю 2\texorpdfstring{$^\wedge$}{\string^}64. Параметры A и C подобраны так, чтобы период был максимальным (2\texorpdfstring{$^\wedge$}{\string^}64).
+\item К полученному состоянию применяются три битовые операции:\+
+\begin{DoxyItemize}
+\item x \texorpdfstring{$^\wedge$}{\string^}= (x \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} 31) /\+/\+ сдвиг вправо и XOR
+\item x \texorpdfstring{$^\wedge$}{\string^}= (x \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 25) /\+/\+ сдвиг влево и XOR
+\item x \texorpdfstring{$^\wedge$}{\string^}= (x \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} 28) /\+/\+ ещё один сдвиг вправо Эти операции нелинейны и хорошо перемешивают биты, разрушая корреляцию младших битов, свойственную LCG. 
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{modified__generators_8hpp}{modified\+\_\+generators.\+hpp}}\item 
+\doxymbox{\hyperlink{modified__generators_8cpp}{modified\+\_\+generators.\+cpp}}\end{DoxyCompactItemize}

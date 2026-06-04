@@ -22,8 +22,6 @@
 #include "chi_squar.hpp"
 #include "nist_test.hpp"
 
-// Вспомогательные статистики
-
 /**
  * @brief Вычисляет выборочное среднее.
  * @tparam T числовой тип элементов выборки.
@@ -115,11 +113,9 @@ generateSamples(Generator& gen, size_t numSamples, size_t sampleSize) {
  * @param significance уровень значимости для хи-квадрат теста.
  */
 template <typename T>
-void printStats(const std::string& name,
-                const std::vector<std::vector<T>>& samples,
-                T minVal, T maxVal,
+void printStats(const std::string& name, const std::vector<std::vector<T>>& samples, T minVal, T maxVal,
                 double significance) {
-    std::cout << "\n=== " << name << " ===\n";
+    std::cout << "\n" << name << "\n";
     size_t passed = 0;
     for (size_t i = 0; i < samples.size(); ++i) {
         double m = mean(samples[i]);
@@ -152,7 +148,7 @@ template <typename T>
 void runNISTTests(const std::string& name,
                   const std::vector<std::vector<T>>& samples,
                   double significance) {
-    std::cout << "\n--- NIST tests for " << name << " ---\n";
+    std::cout << "\nNIST tests for " << name << "\n";
     std::vector<bool> allBits;
     for (const auto& sample : samples) {
         auto bits = toBits(sample, sizeof(T) * 8);

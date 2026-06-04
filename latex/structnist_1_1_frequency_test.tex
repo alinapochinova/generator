@@ -1,0 +1,48 @@
+\doxysection{nist::\+Frequency\+Test Struct Reference}
+\hypertarget{structnist_1_1_frequency_test}{}\label{structnist_1_1_frequency_test}\index{nist::FrequencyTest@{nist::FrequencyTest}}
+
+
+Частотный (monobit) тест — проверяет, близка ли доля единиц во всей последовательности к 1/\+2.  
+
+
+
+
+{\ttfamily \+\#include $<$nist\+\_\+test.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{structnist_1_1_frequency_test_a3b4c5f47b0ec765fed9660b460562db4}{Frequency\+Test}} (const std::\+vector$<$ bool $>$ \&bits)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structnist_1_1_frequency_test_a25c3e148cb611e3b7788a1088bca9acc}\label{structnist_1_1_frequency_test_a25c3e148cb611e3b7788a1088bca9acc} 
+double {\bfseries p\+\_\+value}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Частотный (monobit) тест — проверяет, близка ли доля единиц во всей последовательности к 1/\+2. 
+
+Статистика:\+ S\+\_\+n = (количество единиц) -\/ (количество нулей). Нормированная статистика:\+ S = \texorpdfstring{$\vert$}{|}\+S\+\_\+n\texorpdfstring{$\vert$}{|} /\+ √n. p-\/value = erfc(S/\+√2). Если p-\/value ≥ α, последовательность случайна. 
+
+\label{structnist_1_1_frequency_test_doc-constructors}
+\Hypertarget{structnist_1_1_frequency_test_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structnist_1_1_frequency_test_a3b4c5f47b0ec765fed9660b460562db4}\index{nist::FrequencyTest@{nist::FrequencyTest}!FrequencyTest@{FrequencyTest}}
+\index{FrequencyTest@{FrequencyTest}!nist::FrequencyTest@{nist::FrequencyTest}}
+\doxysubsubsection{\texorpdfstring{FrequencyTest()}{FrequencyTest()}}
+{\footnotesize\ttfamily \label{structnist_1_1_frequency_test_a3b4c5f47b0ec765fed9660b460562db4} 
+nist::\+\+Frequency\+Test::\+\+Frequency\+Test (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ bool $>$ \&}]{bits}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em bits} & входная битовая последовательность. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{nist__test_8hpp}{nist\+\_\+test.\+hpp}}\end{DoxyCompactItemize}

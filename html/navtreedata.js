@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Laboratornaya_3", "index.html", [
+  [ "Лабораторная: ГПСЧ", "index.html", [
     [ "generator", "md__r_e_a_d_m_e.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],

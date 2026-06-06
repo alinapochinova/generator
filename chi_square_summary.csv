@@ -1,0 +1,6 @@
+MLCG_XOR,20,20,1
+LFG_XOR,19,20,0.95
+Xorshift128_MLT,19,20,0.95
+LCG_Standart,19,20,0.95
+LFG_Standart,19,20,0.95
+Xorshift128_Standart,19,20,0.95

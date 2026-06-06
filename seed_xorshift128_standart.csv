@@ -1,0 +1,5 @@
+seed,passed_samples,total_samples,pass_rate
+0,0,20,0
+1,20,20,1
+12345,19,20,0.95
+18446744073709551615,20,20,1

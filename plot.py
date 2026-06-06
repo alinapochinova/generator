@@ -142,8 +142,7 @@ def plot_seed_dependency(seed_files, names, output_file='seed_dependency.png'):
         ax.set_ylim(0, 1.05)
         ax.set_ylabel('Pass rate (Chi-square)')
         ax.set_title(f'{name}')
-        ax.axhline(y=0.95, color='red', linestyle='--', linewidth=2, label='expected (95%)')
-        ax.legend()
+        ax.axhline(y=0.95, color='red', linestyle='--', linewidth=2, label=None)
         
         # Подписи значений над столбцами
         for bar, rate in zip(bars, df['pass_rate']):
@@ -168,14 +167,13 @@ def plot_chi_square_summary(csv_file='chi_square_summary.csv', output_file='chi_
     Данные читаются из CSV, созданного C++ программой.
     """
     try:
-        df = pd.read_csv(csv_file)
+        df = pd.read_csv(csv_file, header=None, names=['generator', 'passed_samples', 'total_samples', 'pass_rate'])
     except FileNotFoundError:
         print(f"Warning: {csv_file} not found. Run C++ program first to generate data.")
         return
     
     fig, ax = plt.subplots(figsize=(10, 6))
-    
-    # Сортируем для красоты
+
     df = df.sort_values('pass_rate', ascending=False)
     
     colors = plt.cm.Set3(range(len(df)))
@@ -184,8 +182,7 @@ def plot_chi_square_summary(csv_file='chi_square_summary.csv', output_file='chi_
     ax.set_ylim(0, 1.05)
     ax.set_ylabel('Proportion of samples passing Chi-square test')
     ax.set_title('Chi-square test pass rate by generator (α=0.05)')
-    
-    # Подписи значений над столбцами
+
     for bar, rate in zip(bars, df['pass_rate']):
         ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.02,
                 f'{rate:.2f}', ha='center', va='bottom', fontsize=10)
@@ -274,9 +271,7 @@ def plot_correlation_comparison(csv_file_bad='corr_lcg_standart.csv',
     print(f"Graph saved: {output_file}")
 
 if __name__ == '__main__':
-    print("Starting graph generation...")
-    print("=" * 50)
-    
+
     # 1. График производительности (модифицированные + mt19937_64)
     try:
         plot_performance_modified('timings_modified.csv', 'performance_modified.png')
@@ -323,8 +318,11 @@ if __name__ == '__main__':
     except FileNotFoundError as e:
         print(f"Warning: {e}. Skipping seed_dependency graph.")
     
-    # 5. Сводная диаграмма хи-квадрат (требует ручного ввода данных)
-    # plot_chi_square_summary([], [], 'chi_square_summary.png')
+    # 5. Сводная диаграмма хи-квадрат
+    try:
+        plot_chi_square_summary('chi_square_summary.csv', 'chi_square_summary.png')
+    except FileNotFoundError as e:
+        print(f"Warning: {e}. Skipping chi_square_summary graph.")
     
     # 6. Сравнение корреляций LCG_Standart и MLCG_XOR
     try:
@@ -332,6 +330,3 @@ if __name__ == '__main__':
                                     'correlation_comparison.png')
     except FileNotFoundError as e:
         print(f"Warning: {e}. Skipping correlation_comparison graph.")
-    
-    print("=" * 50)
-    print("Graph generation completed!")

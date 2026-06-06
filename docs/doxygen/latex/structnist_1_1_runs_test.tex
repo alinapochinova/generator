@@ -1,0 +1,53 @@
+\doxysection{nist::\+Runs\+Test Struct Reference}
+\hypertarget{structnist_1_1_runs_test}{}\label{structnist_1_1_runs_test}\index{nist::RunsTest@{nist::RunsTest}}
+
+
+Тест на серии (runs test) — проверяет, соответствует ли количество серий (последовательностей одинаковых битов) случайному распределению.  
+
+
+
+
+{\ttfamily \+\#include $<$nist\+\_\+test.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{structnist_1_1_runs_test_acfb8e7b3ca6b91db69151e9f83fec2f5}{Runs\+Test}} (const std::\+vector$<$ bool $>$ \&bits)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \doxymbox{\hyperlink{structnist_1_1_runs_test_aac09fbac79649a163844ef52c1d13a1b}{p\+\_\+value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Тест на серии (runs test) — проверяет, соответствует ли количество серий (последовательностей одинаковых битов) случайному распределению. 
+
+Пусть pi = количество единиц /\+ n. Если pi не слишком отличается от 0.\+5, статистика:\+ Z = (R -\/ 2npi(1-\/pi)) /\+ (2sqrt(2n)pi(1-\/pi)), где R — общее число серий. p-\/value = erfc(\texorpdfstring{$\vert$}{|}\+Z\texorpdfstring{$\vert$}{|}/\+sqrt2). Малое p-\/value указывает на корреляцию соседних битов. 
+
+\label{structnist_1_1_runs_test_doc-constructors}
+\Hypertarget{structnist_1_1_runs_test_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structnist_1_1_runs_test_acfb8e7b3ca6b91db69151e9f83fec2f5}\index{nist::RunsTest@{nist::RunsTest}!RunsTest@{RunsTest}}
+\index{RunsTest@{RunsTest}!nist::RunsTest@{nist::RunsTest}}
+\doxysubsubsection{\texorpdfstring{RunsTest()}{RunsTest()}}
+{\footnotesize\ttfamily \label{structnist_1_1_runs_test_acfb8e7b3ca6b91db69151e9f83fec2f5} 
+nist::\+\+Runs\+Test::\+\+Runs\+Test (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ bool $>$ \&}]{bits}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{structnist_1_1_runs_test_doc-variable-members}
+\Hypertarget{structnist_1_1_runs_test_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structnist_1_1_runs_test_aac09fbac79649a163844ef52c1d13a1b}\index{nist::RunsTest@{nist::RunsTest}!p\_value@{p\_value}}
+\index{p\_value@{p\_value}!nist::RunsTest@{nist::RunsTest}}
+\doxysubsubsection{\texorpdfstring{p\_value}{p\_value}}
+{\footnotesize\ttfamily \label{structnist_1_1_runs_test_aac09fbac79649a163844ef52c1d13a1b} 
+double nist::\+\+Runs\+Test::\+p\+\_\+value}
+
+
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{nist__test_8hpp}{nist\+\_\+test.\+hpp}}\end{DoxyCompactItemize}

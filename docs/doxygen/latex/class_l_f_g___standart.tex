@@ -1,0 +1,194 @@
+\doxysection{LFG\+\_\+\+Standart Class Reference}
+\hypertarget{class_l_f_g___standart}{}\label{class_l_f_g___standart}\index{LFG\_Standart@{LFG\_Standart}}
+
+
+Классический генератор Фибоначчи с запаздыванием (LFG) без модификаций.  
+
+
+
+
+{\ttfamily \+\#include $<$standart\+\_\+generators.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \doxymbox{\hyperlink{class_l_f_g___standart_a1c70961cd0f1ab9cfef968244ed9ac10}{result\+\_\+type}} = uint32\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_l_f_g___standart_ad7d440402d87baafaf5236afba687545}{LFG\+\_\+\+Standart}} (uint32\+\_\+t seed=123456789)
+\begin{DoxyCompactList}\small\item\em Конструктор. \end{DoxyCompactList}\item 
+uint32\+\_\+t \doxymbox{\hyperlink{class_l_f_g___standart_a2bdd630dc7585f273f3cddd459e5c31a}{next}} ()
+\begin{DoxyCompactList}\small\item\em Генерирует следующее 32-\/битное псевдослучайное число. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr uint32\+\_\+t \doxymbox{\hyperlink{class_l_f_g___standart_a1a65e03f7fbeb0a4f199778ff9f96dd4}{min}} ()
+\item 
+static constexpr uint32\+\_\+t \doxymbox{\hyperlink{class_l_f_g___standart_a63aac72c0ead9eed1971b0dbe20c66d1}{max}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_l_f_g___standart_acc98eba4d07fbcf5f9feceef84c331a0}{init\+Buffer}} (uint32\+\_\+t seed)
+\begin{DoxyCompactList}\small\item\em Инициализация буфера с заданным seed (простая версия без scramble). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \doxymbox{\hyperlink{class_l_f_g___standart_a89c4460cb4f49ec96b6cca74de6afe8e}{buffer}} \+[\doxymbox{\hyperlink{class_l_f_g___standart_ac3bd266c1fb00c29d685804b7fde6b0b}{LAG1}}]\+
+\item 
+int \doxymbox{\hyperlink{class_l_f_g___standart_aa04259723f8e8c2a5bbb4b014fa0283f}{index}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \doxymbox{\hyperlink{class_l_f_g___standart_ac3bd266c1fb00c29d685804b7fde6b0b}{LAG1}} = 55
+\item 
+static constexpr int \doxymbox{\hyperlink{class_l_f_g___standart_a2e2318dfb09d749248b00d5b3404949c}{LAG2}} = 24
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Классический генератор Фибоначчи с запаздыванием (LFG) без модификаций. 
+
+Формула:\+ buffer\+[i]\+ = buffer\+[i]\+ \texorpdfstring{$^\wedge$}{\string^} buffer\+[(i+24)\%55]\+ (без scramble). Лаги:\+ p=55, q=24.
+
+\begin{DoxyNote}{Note}
+Период:\+ \texorpdfstring{$\sim$}{\string~}2\texorpdfstring{$^\wedge$}{\string^}79 для XOR-\/варианта. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Сильная зависимость от начального seed, возможны корреляции.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_l_f_g___x_o_r}{LFG\+\_\+\+XOR} – модифицированная версия с scramble и улучшенной инициализацией 
+\end{DoxySeeAlso}
+
+
+\label{class_l_f_g___standart_doc-typedef-members}
+\Hypertarget{class_l_f_g___standart_doc-typedef-members}
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_l_f_g___standart_a1c70961cd0f1ab9cfef968244ed9ac10}\index{LFG\_Standart@{LFG\_Standart}!result\_type@{result\_type}}
+\index{result\_type@{result\_type}!LFG\_Standart@{LFG\_Standart}}
+\doxysubsubsection{\texorpdfstring{result\_type}{result\_type}}
+{\footnotesize\ttfamily \label{class_l_f_g___standart_a1c70961cd0f1ab9cfef968244ed9ac10} 
+using \doxymbox{\hyperlink{class_l_f_g___standart_a1c70961cd0f1ab9cfef968244ed9ac10}{LFG\+\_\+\+Standart::\+result\+\_\+type}} = uint32\+\_\+t}
+
+
+
+\label{class_l_f_g___standart_doc-constructors}
+\Hypertarget{class_l_f_g___standart_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_l_f_g___standart_ad7d440402d87baafaf5236afba687545}\index{LFG\_Standart@{LFG\_Standart}!LFG\_Standart@{LFG\_Standart}}
+\index{LFG\_Standart@{LFG\_Standart}!LFG\_Standart@{LFG\_Standart}}
+\doxysubsubsection{\texorpdfstring{LFG\_Standart()}{LFG\_Standart()}}
+{\footnotesize\ttfamily \label{class_l_f_g___standart_ad7d440402d87baafaf5236afba687545} 
+LFG\+\_\+\+Standart::\+\+LFG\+\_\+\+Standart (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{seed}{ = {\ttfamily 123456789}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор. 
+
+Конструктор \doxylink{class_l_f_g___standart}{LFG\+\_\+\+Standart}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & Начальное значение (по умолчанию 123456789)\\
+\hline
+{\em seed} & Начальное значение для инициализации буфера.\\
+\hline
+\end{DoxyParams}
+Устанавливает index = LAG1 (55), чтобы при первом вызове \doxylink{class_l_f_g___standart_a2bdd630dc7585f273f3cddd459e5c31a}{next()} буфер был перегенерирован. Вызывает init\+Buffer(seed) для заполнения начальных значений буфера. 
+
+\label{class_l_f_g___standart_doc-func-members}
+\Hypertarget{class_l_f_g___standart_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_l_f_g___standart_acc98eba4d07fbcf5f9feceef84c331a0}\index{LFG\_Standart@{LFG\_Standart}!initBuffer@{initBuffer}}
+\index{initBuffer@{initBuffer}!LFG\_Standart@{LFG\_Standart}}
+\doxysubsubsection{\texorpdfstring{initBuffer()}{initBuffer()}}
+{\footnotesize\ttfamily \label{class_l_f_g___standart_acc98eba4d07fbcf5f9feceef84c331a0} 
+void LFG\+\_\+\+Standart::\+init\+Buffer (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{seed}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Инициализация буфера с заданным seed (простая версия без scramble). 
+
+Простая инициализация буфера без перемешивания.
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & Начальное значение.\\
+\hline
+\end{DoxyParams}
+Заполняет буфер из 55 элементов с помощью LCG:\+ state = state \texorpdfstring{$\ast$}{*} 1103515245 + 12345.
+
+\begin{DoxyNote}{Note}
+Нет функции scramble, нет дополнительных проходов перемешивания. Это делает генератор чувствительным к выбору seed. 
+\end{DoxyNote}
+\Hypertarget{class_l_f_g___standart_a63aac72c0ead9eed1971b0dbe20c66d1}\index{LFG\_Standart@{LFG\_Standart}!max@{max}}
+\index{max@{max}!LFG\_Standart@{LFG\_Standart}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily \label{class_l_f_g___standart_a63aac72c0ead9eed1971b0dbe20c66d1} 
+constexpr uint32\+\_\+t LFG\+\_\+\+Standart::\+max (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{class_l_f_g___standart_a1a65e03f7fbeb0a4f199778ff9f96dd4}\index{LFG\_Standart@{LFG\_Standart}!min@{min}}
+\index{min@{min}!LFG\_Standart@{LFG\_Standart}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily \label{class_l_f_g___standart_a1a65e03f7fbeb0a4f199778ff9f96dd4} 
+constexpr uint32\+\_\+t LFG\+\_\+\+Standart::\+min (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{class_l_f_g___standart_a2bdd630dc7585f273f3cddd459e5c31a}\index{LFG\_Standart@{LFG\_Standart}!next@{next}}
+\index{next@{next}!LFG\_Standart@{LFG\_Standart}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \label{class_l_f_g___standart_a2bdd630dc7585f273f3cddd459e5c31a} 
+uint32\+\_\+t LFG\+\_\+\+Standart::\+next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Генерирует следующее 32-\/битное псевдослучайное число. 
+
+Генерация следующего 32-\/битного числа.
+
+\begin{DoxyReturn}{Returns}
+Очередное значение LFG без scramble.
+\end{DoxyReturn}
+Если индекс достиг конца буфера (55), весь буфер пересчитывается по формуле:\+ buffer\+[i]\+ \texorpdfstring{$^\wedge$}{\string^}= buffer\+[(i+24)\%55]\+. Затем возвращается текущий элемент буфера, и индекс увеличивается.
+
+\begin{DoxyNote}{Note}
+Отсутствие scramble может приводить к корреляциям. 
+\end{DoxyNote}
+
+
+\label{class_l_f_g___standart_doc-variable-members}
+\Hypertarget{class_l_f_g___standart_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_l_f_g___standart_a89c4460cb4f49ec96b6cca74de6afe8e}\index{LFG\_Standart@{LFG\_Standart}!buffer@{buffer}}
+\index{buffer@{buffer}!LFG\_Standart@{LFG\_Standart}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily \label{class_l_f_g___standart_a89c4460cb4f49ec96b6cca74de6afe8e} 
+uint32\+\_\+t LFG\+\_\+\+Standart::\+buffer\+[\doxymbox{\hyperlink{class_l_f_g___standart_ac3bd266c1fb00c29d685804b7fde6b0b}{LAG1}}]\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_l_f_g___standart_aa04259723f8e8c2a5bbb4b014fa0283f}\index{LFG\_Standart@{LFG\_Standart}!index@{index}}
+\index{index@{index}!LFG\_Standart@{LFG\_Standart}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily \label{class_l_f_g___standart_aa04259723f8e8c2a5bbb4b014fa0283f} 
+int LFG\+\_\+\+Standart::\+index\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_l_f_g___standart_ac3bd266c1fb00c29d685804b7fde6b0b}\index{LFG\_Standart@{LFG\_Standart}!LAG1@{LAG1}}
+\index{LAG1@{LAG1}!LFG\_Standart@{LFG\_Standart}}
+\doxysubsubsection{\texorpdfstring{LAG1}{LAG1}}
+{\footnotesize\ttfamily \label{class_l_f_g___standart_ac3bd266c1fb00c29d685804b7fde6b0b} 
+int LFG\+\_\+\+Standart::\+\+LAG1 = 55\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{class_l_f_g___standart_a2e2318dfb09d749248b00d5b3404949c}\index{LFG\_Standart@{LFG\_Standart}!LAG2@{LAG2}}
+\index{LAG2@{LAG2}!LFG\_Standart@{LFG\_Standart}}
+\doxysubsubsection{\texorpdfstring{LAG2}{LAG2}}
+{\footnotesize\ttfamily \label{class_l_f_g___standart_a2e2318dfb09d749248b00d5b3404949c} 
+int LFG\+\_\+\+Standart::\+\+LAG2 = 24\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{standart__generators_8hpp}{standart\+\_\+generators.\+hpp}}\item 
+\doxymbox{\hyperlink{standart__generators_8cpp}{standart\+\_\+generators.\+cpp}}\end{DoxyCompactItemize}

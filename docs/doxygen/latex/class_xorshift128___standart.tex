@@ -1,0 +1,168 @@
+\doxysection{Xorshift128\+\_\+\+Standart Class Reference}
+\hypertarget{class_xorshift128___standart}{}\label{class_xorshift128___standart}\index{Xorshift128\_Standart@{Xorshift128\_Standart}}
+
+
+Классический Xorshift128 без нелинейного умножения.  
+
+
+
+
+{\ttfamily \+\#include $<$standart\+\_\+generators.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \doxymbox{\hyperlink{class_xorshift128___standart_ab7e4fb764bdd41ac5d2be0a93f20c32e}{result\+\_\+type}} = uint64\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_xorshift128___standart_a153538d202775eaeb1d8c5068635a715}{Xorshift128\+\_\+\+Standart}} (uint64\+\_\+t seed=123456789)
+\begin{DoxyCompactList}\small\item\em Конструктор. \end{DoxyCompactList}\item 
+uint64\+\_\+t \doxymbox{\hyperlink{class_xorshift128___standart_a349fb20a917c8186002217d6ed1a1d16}{next}} ()
+\begin{DoxyCompactList}\small\item\em Генерирует следующее 64-\/битное псевдослучайное число. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr uint64\+\_\+t \doxymbox{\hyperlink{class_xorshift128___standart_a963f64cb8635de3779117da4d5377639}{min}} ()
+\item 
+static constexpr uint64\+\_\+t \doxymbox{\hyperlink{class_xorshift128___standart_adaa15f315609a3c52a92efc100512619}{max}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_xorshift128___standart_a608c10784d5455125207732b21af5ba1}{warmup}} (int iterations=10)
+\begin{DoxyCompactList}\small\item\em Прогрев генератора (10 итераций для честного сравнения с модифицированной версией). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \doxymbox{\hyperlink{class_xorshift128___standart_a60e85b5bc23be28ce8a7dfd325bd1385}{s}} \+[2]\+
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Классический Xorshift128 без нелинейного умножения. 
+
+Формула:\+ только XOR и сдвиги (23, 17, 26). Состояние:\+ 128 бит (два 64-\/битных слова).
+
+\begin{DoxyNote}{Note}
+Период:\+ 2\texorpdfstring{$^\wedge$}{\string^}128 -\/ 1. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Линейность в GF(2) – по нескольким выходам можно восстановить состояние.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_xorshift128___m_l_t}{Xorshift128\+\_\+\+MLT} – модифицированная версия с умножением (Split\+Mix64) 
+\end{DoxySeeAlso}
+
+
+\label{class_xorshift128___standart_doc-typedef-members}
+\Hypertarget{class_xorshift128___standart_doc-typedef-members}
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_xorshift128___standart_ab7e4fb764bdd41ac5d2be0a93f20c32e}\index{Xorshift128\_Standart@{Xorshift128\_Standart}!result\_type@{result\_type}}
+\index{result\_type@{result\_type}!Xorshift128\_Standart@{Xorshift128\_Standart}}
+\doxysubsubsection{\texorpdfstring{result\_type}{result\_type}}
+{\footnotesize\ttfamily \label{class_xorshift128___standart_ab7e4fb764bdd41ac5d2be0a93f20c32e} 
+using \doxymbox{\hyperlink{class_xorshift128___standart_ab7e4fb764bdd41ac5d2be0a93f20c32e}{Xorshift128\+\_\+\+Standart::\+result\+\_\+type}} = uint64\+\_\+t}
+
+
+
+\label{class_xorshift128___standart_doc-constructors}
+\Hypertarget{class_xorshift128___standart_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_xorshift128___standart_a153538d202775eaeb1d8c5068635a715}\index{Xorshift128\_Standart@{Xorshift128\_Standart}!Xorshift128\_Standart@{Xorshift128\_Standart}}
+\index{Xorshift128\_Standart@{Xorshift128\_Standart}!Xorshift128\_Standart@{Xorshift128\_Standart}}
+\doxysubsubsection{\texorpdfstring{Xorshift128\_Standart()}{Xorshift128\_Standart()}}
+{\footnotesize\ttfamily \label{class_xorshift128___standart_a153538d202775eaeb1d8c5068635a715} 
+Xorshift128\+\_\+\+Standart::\+\+Xorshift128\+\_\+\+Standart (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{seed}{ = {\ttfamily 123456789}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор. 
+
+Конструктор \doxylink{class_xorshift128___standart}{Xorshift128\+\_\+\+Standart}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & Начальное значение (по умолчанию 123456789)\\
+\hline
+{\em seed} & Начальное значение.\\
+\hline
+\end{DoxyParams}
+Инициализирует состояние:\+ s\+[0]\+ = seed, s\+[1]\+ = seed \texorpdfstring{$\ast$}{*} золотое сечение. Затем выполняет прогрев (10 итераций) для честного сравнения с модифицированной версией \doxylink{class_xorshift128___m_l_t}{Xorshift128\+\_\+\+MLT}. 
+
+\label{class_xorshift128___standart_doc-func-members}
+\Hypertarget{class_xorshift128___standart_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_xorshift128___standart_adaa15f315609a3c52a92efc100512619}\index{Xorshift128\_Standart@{Xorshift128\_Standart}!max@{max}}
+\index{max@{max}!Xorshift128\_Standart@{Xorshift128\_Standart}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily \label{class_xorshift128___standart_adaa15f315609a3c52a92efc100512619} 
+constexpr uint64\+\_\+t Xorshift128\+\_\+\+Standart::\+max (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{class_xorshift128___standart_a963f64cb8635de3779117da4d5377639}\index{Xorshift128\_Standart@{Xorshift128\_Standart}!min@{min}}
+\index{min@{min}!Xorshift128\_Standart@{Xorshift128\_Standart}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily \label{class_xorshift128___standart_a963f64cb8635de3779117da4d5377639} 
+constexpr uint64\+\_\+t Xorshift128\+\_\+\+Standart::\+min (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{class_xorshift128___standart_a349fb20a917c8186002217d6ed1a1d16}\index{Xorshift128\_Standart@{Xorshift128\_Standart}!next@{next}}
+\index{next@{next}!Xorshift128\_Standart@{Xorshift128\_Standart}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \label{class_xorshift128___standart_a349fb20a917c8186002217d6ed1a1d16} 
+uint64\+\_\+t Xorshift128\+\_\+\+Standart::\+next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Генерирует следующее 64-\/битное псевдослучайное число. 
+
+Генерация следующего 64-\/битного числа.
+
+\begin{DoxyReturn}{Returns}
+Очередное значение Xorshift без нелинейного умножения.
+\end{DoxyReturn}
+Выполняется классический Xorshift128 с параметрами (23, 17, 26):\+
+\begin{DoxyItemize}
+\item s1 \texorpdfstring{$^\wedge$}{\string^}= s1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 23
+\item s1 \texorpdfstring{$^\wedge$}{\string^}= s1 \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} 17
+\item s1 \texorpdfstring{$^\wedge$}{\string^}= s0
+\item s1 \texorpdfstring{$^\wedge$}{\string^}= s0 \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} 26
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Операции линейны в GF(2), что может приводить к корреляциям. Модифицированная версия добавляет умножение для нелинейности. 
+\end{DoxyNote}
+\Hypertarget{class_xorshift128___standart_a608c10784d5455125207732b21af5ba1}\index{Xorshift128\_Standart@{Xorshift128\_Standart}!warmup@{warmup}}
+\index{warmup@{warmup}!Xorshift128\_Standart@{Xorshift128\_Standart}}
+\doxysubsubsection{\texorpdfstring{warmup()}{warmup()}}
+{\footnotesize\ttfamily \label{class_xorshift128___standart_a608c10784d5455125207732b21af5ba1} 
+void Xorshift128\+\_\+\+Standart::\+warmup (\begin{DoxyParamCaption}\item[{int}]{iterations}{ = {\ttfamily 10}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Прогрев генератора (10 итераций для честного сравнения с модифицированной версией). 
+
+Прогрев генератора.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iterations} & Количество итераций прогрева.\\
+\hline
+\end{DoxyParams}
+Выполняет несколько итераций \doxylink{class_xorshift128___standart_a349fb20a917c8186002217d6ed1a1d16}{next()} без использования результатов. Это улучшает начальное состояние, особенно при плохих seed. 
+
+\label{class_xorshift128___standart_doc-variable-members}
+\Hypertarget{class_xorshift128___standart_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_xorshift128___standart_a60e85b5bc23be28ce8a7dfd325bd1385}\index{Xorshift128\_Standart@{Xorshift128\_Standart}!s@{s}}
+\index{s@{s}!Xorshift128\_Standart@{Xorshift128\_Standart}}
+\doxysubsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily \label{class_xorshift128___standart_a60e85b5bc23be28ce8a7dfd325bd1385} 
+uint64\+\_\+t Xorshift128\+\_\+\+Standart::\+s\+[2]\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{standart__generators_8hpp}{standart\+\_\+generators.\+hpp}}\item 
+\doxymbox{\hyperlink{standart__generators_8cpp}{standart\+\_\+generators.\+cpp}}\end{DoxyCompactItemize}

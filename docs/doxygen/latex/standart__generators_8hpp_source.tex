@@ -1,0 +1,67 @@
+\doxysection{standart\+\_\+generators.\+hpp}
+\hypertarget{standart__generators_8hpp_source}{}\label{standart__generators_8hpp_source}\doxymbox{\hyperlink{standart__generators_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ standart\_generators.hpp}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ STANDART\_GENERATORS\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ STANDART\_GENERATORS\_HPP}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_l_c_g___standart_ae17fb6964125c4f38ae16077cdaa89c7}{LCG\_Standart}}\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{class_l_c_g___standart_a7738689a1e46372a51d86ad9a08fa8b9}{result\_type}}\ =\ uint64\_t;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_l_c_g___standart_ae17fb6964125c4f38ae16077cdaa89c7}{LCG\_Standart}}(uint64\_t\ seed\ =\ 123456789);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \ \ \ \ uint64\_t\ \doxymbox{\hyperlink{class_l_c_g___standart_ab56c601570dce380fb3aebe96b349833}{next}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint64\_t\ \doxymbox{\hyperlink{class_l_c_g___standart_a6b4dc51f6645e6e64c09ca38bb063bc8}{min}}()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint64\_t\ \doxymbox{\hyperlink{class_l_c_g___standart_a80918fab5edeffb6811089494ce1f313}{max}}()\ \{\ \textcolor{keywordflow}{return}\ \string~0ULL;\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ \ \ \ \ uint64\_t\ \doxymbox{\hyperlink{class_l_c_g___standart_a4051f73f6eddc8e80f67fa13dd1e632a}{state}};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint64\_t\ \doxymbox{\hyperlink{class_l_c_g___standart_a72c91567f69efb621e66adde1c9cddec}{A}}\ =\ 0x9e3779b97f4a7c15ULL;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint64\_t\ \doxymbox{\hyperlink{class_l_c_g___standart_a3a200e7dddd7e934b365c760b3cbdbe4}{C}}\ =\ 0xbf58476d1ce4e5b9ULL;}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_l_f_g___standart_ad7d440402d87baafaf5236afba687545}{LFG\_Standart}}\ \{}
+\DoxyCodeLine{00064\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{class_l_f_g___standart_a1c70961cd0f1ab9cfef968244ed9ac10}{result\_type}}\ =\ uint32\_t;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_l_f_g___standart_ad7d440402d87baafaf5236afba687545}{LFG\_Standart}}(uint32\_t\ seed\ =\ 123456789);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ \ \ \ \ uint32\_t\ \doxymbox{\hyperlink{class_l_f_g___standart_a2bdd630dc7585f273f3cddd459e5c31a}{next}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint32\_t\ \doxymbox{\hyperlink{class_l_f_g___standart_a1a65e03f7fbeb0a4f199778ff9f96dd4}{min}}()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint32\_t\ \doxymbox{\hyperlink{class_l_f_g___standart_a63aac72c0ead9eed1971b0dbe20c66d1}{max}}()\ \{\ \textcolor{keywordflow}{return}\ \string~0U;\ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_l_f_g___standart_ac3bd266c1fb00c29d685804b7fde6b0b}{LAG1}}\ =\ 55;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_l_f_g___standart_a2e2318dfb09d749248b00d5b3404949c}{LAG2}}\ =\ 24;}
+\DoxyCodeLine{00082\ \ \ \ \ uint32\_t\ \doxymbox{\hyperlink{class_l_f_g___standart_a89c4460cb4f49ec96b6cca74de6afe8e}{buffer}}[\doxymbox{\hyperlink{class_l_f_g___standart_ac3bd266c1fb00c29d685804b7fde6b0b}{LAG1}}];}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_l_f_g___standart_aa04259723f8e8c2a5bbb4b014fa0283f}{index}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_l_f_g___standart_acc98eba4d07fbcf5f9feceef84c331a0}{initBuffer}}(uint32\_t\ seed);}
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_xorshift128___standart_a153538d202775eaeb1d8c5068635a715}{Xorshift128\_Standart}}\ \{}
+\DoxyCodeLine{00101\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{class_xorshift128___standart_ab7e4fb764bdd41ac5d2be0a93f20c32e}{result\_type}}\ =\ uint64\_t;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_xorshift128___standart_a153538d202775eaeb1d8c5068635a715}{Xorshift128\_Standart}}(uint64\_t\ seed\ =\ 123456789);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00111\ \ \ \ \ uint64\_t\ \doxymbox{\hyperlink{class_xorshift128___standart_a349fb20a917c8186002217d6ed1a1d16}{next}}();}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint64\_t\ \doxymbox{\hyperlink{class_xorshift128___standart_a963f64cb8635de3779117da4d5377639}{min}}()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint64\_t\ \doxymbox{\hyperlink{class_xorshift128___standart_adaa15f315609a3c52a92efc100512619}{max}}()\ \{\ \textcolor{keywordflow}{return}\ \string~0ULL;\ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00117\ \ \ \ \ uint64\_t\ \doxymbox{\hyperlink{class_xorshift128___standart_a60e85b5bc23be28ce8a7dfd325bd1385}{s}}[2];}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_xorshift128___standart_a608c10784d5455125207732b21af5ba1}{warmup}}(\textcolor{keywordtype}{int}\ iterations\ =\ 10);}
+\DoxyCodeLine{00121\ \};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ STANDART\_GENERATORS\_HPP}}
+
+\end{DoxyCode}

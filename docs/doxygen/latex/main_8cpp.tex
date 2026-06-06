@@ -1,0 +1,442 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$iomanip$>$}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$numeric$>$}\newline
+{\ttfamily \+\#include $<$cmath$>$}\newline
+{\ttfamily \+\#include $<$algorithm$>$}\newline
+{\ttfamily \+\#include $<$chrono$>$}\newline
+{\ttfamily \+\#include $<$fstream$>$}\newline
+{\ttfamily \+\#include $<$random$>$}\newline
+{\ttfamily \+\#include "{}chi\+\_\+squar.\+hpp"{}}\newline
+{\ttfamily \+\#include "{}nist\+\_\+test.\+hpp"{}}\newline
+{\ttfamily \+\#include "{}modified\+\_\+generators.\+hpp"{}}\newline
+{\ttfamily \+\#include "{}standart\+\_\+generators.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\double \doxymbox{\hyperlink{main_8cpp_aa5cb588269a29c95fb1184b0df6c901e}{mean}} (const std::\+vector$<$ T $>$ \&sample)
+\begin{DoxyCompactList}\small\item\em Вычисляет выборочное среднее арифметическое. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\double \doxymbox{\hyperlink{main_8cpp_a863a7a75b18c4556a2b994572dadd835}{stddev}} (const std::\+vector$<$ T $>$ \&sample)
+\begin{DoxyCompactList}\small\item\em Вычисляет выборочное стандартное отклонение. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\double \doxymbox{\hyperlink{main_8cpp_a11a8e028b717b4cd12faf4973951b0fe}{variability}} (const std::\+vector$<$ T $>$ \&sample)
+\begin{DoxyCompactList}\small\item\em Вычисляет коэффициент вариации (CV = stddev /\+ mean). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Generator$>$ }\\std::\+vector$<$ std::\+vector$<$ typename Generator::\+result\+\_\+type $>$ $>$ \doxymbox{\hyperlink{main_8cpp_ad143486e425f8464d243e365b06bf682}{generate\+Samples}} (Generator \&gen, size\+\_\+t num\+Samples, size\+\_\+t sample\+Size)
+\begin{DoxyCompactList}\small\item\em Генерирует заданное количество выборок указанного размера. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \doxymbox{\hyperlink{main_8cpp_ab41ed6ebb77f6825cdc27d01014a7363}{print\+Stats}} (const std::\+string \&name, const std::\+vector$<$ std::\+vector$<$ T $>$ $>$ \&samples, T min\+Val, T max\+Val, double significance)
+\begin{DoxyCompactList}\small\item\em Выводит статистики и результат хи-\/квадрат для каждой выборки. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\std::\+vector$<$ bool $>$ \doxymbox{\hyperlink{main_8cpp_a7ab1c9e62de2e6750aa38d23bb7043d9}{to\+Bits}} (const std::\+vector$<$ T $>$ \&sample, int bits\+Per\+Number)
+\begin{DoxyCompactList}\small\item\em Преобразует вектор целых чисел в битовую последовательность. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \doxymbox{\hyperlink{main_8cpp_adcae40314bf1cdb29ab7ff3e2695616a}{save\+Chi\+Square\+Summary}} (const std::\+string \&filename, const std::\+string \&name, const std::\+vector$<$ std::\+vector$<$ T $>$ $>$ \&samples, T min\+Val, T max\+Val, double significance)
+\begin{DoxyCompactList}\small\item\em Сохраняет сводку хи-\/квадрат тестов в CSV файл. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \doxymbox{\hyperlink{main_8cpp_a2a020a313016106cd3a398cd49d7b3d8}{run\+NISTTests}} (const std::\+string \&name, const std::\+vector$<$ std::\+vector$<$ T $>$ $>$ \&samples, double significance)
+\begin{DoxyCompactList}\small\item\em Запускает пять тестов NIST на объединённой битовой последовательности. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Generator$>$ }\\std::\+vector$<$ uint64\+\_\+t $>$ \doxymbox{\hyperlink{main_8cpp_a519e99d3d5187388ec19a20b9edeaf52}{measure\+Times}} (Generator \&gen, const std::\+vector$<$ size\+\_\+t $>$ \&sizes)
+\begin{DoxyCompactList}\small\item\em Замеряет время генерации заданного количества чисел. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8cpp_a2c4f4bef28178fc092f2c348509c9635}{save\+Timings\+Modified}} (const std::\+string \&filename, const std::\+vector$<$ size\+\_\+t $>$ \&sizes, const std::\+vector$<$ uint64\+\_\+t $>$ \&t1, const std::\+vector$<$ uint64\+\_\+t $>$ \&t2, const std::\+vector$<$ uint64\+\_\+t $>$ \&t3, const std::\+vector$<$ uint64\+\_\+t $>$ \&t4)
+\begin{DoxyCompactList}\small\item\em Сохраняет результаты замеров времени для модифицированных + mt19937\+\_\+64. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8cpp_a34561ddb2fdbd21579e9e989d49df8b5}{save\+Timings\+Comparison}} (const std::\+string \&filename, const std::\+vector$<$ size\+\_\+t $>$ \&sizes, const std::\+vector$<$ uint64\+\_\+t $>$ \&t1, const std::\+vector$<$ uint64\+\_\+t $>$ \&t2, const std::\+vector$<$ uint64\+\_\+t $>$ \&t3, const std::\+vector$<$ uint64\+\_\+t $>$ \&t4, const std::\+vector$<$ uint64\+\_\+t $>$ \&t5, const std::\+vector$<$ uint64\+\_\+t $>$ \&t6)
+\begin{DoxyCompactList}\small\item\em Сохраняет результаты замеров времени для всех генераторов (модифицированные + стандартные). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Generator$>$ }\\void \doxymbox{\hyperlink{main_8cpp_a218606eb66883efb47abf244251d68e5}{save\+Correlation\+Data}} (const std::\+string \&filename, Generator \&gen, size\+\_\+t num\+Points=1000)
+\begin{DoxyCompactList}\small\item\em Сохраняет пары последовательных чисел для построения графика корреляций. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Generator$>$ }\\void \doxymbox{\hyperlink{main_8cpp_a33e64edf9fe1ee08f1627ff4c0224f0f}{test\+Seed\+Dependency}} (const std::\+vector$<$ uint64\+\_\+t $>$ \&seeds, const std::\+string \&gen\+Name, size\+\_\+t num\+Samples, size\+\_\+t sample\+Size, typename Generator::\+result\+\_\+type min\+Val, typename Generator::\+result\+\_\+type max\+Val, double significance, const std::\+string \&filename)
+\begin{DoxyCompactList}\small\item\em Тестирует генератор с разными seed (включая плохие) и сохраняет результат хи-\/квадрат. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr size\+\_\+t \doxymbox{\hyperlink{main_8cpp_ad094e86a392c31469d0271b35c1fa37d}{NUM\+\_\+\+SAMPLES}} = 20
+\begin{DoxyCompactList}\small\item\em Количество выборок для статистического анализа \end{DoxyCompactList}\item 
+constexpr size\+\_\+t \doxymbox{\hyperlink{main_8cpp_a887ae97354788af2d4b0e3306f53ce8b}{SAMPLE\+\_\+\+SIZE}} = 20000
+\begin{DoxyCompactList}\small\item\em Размер каждой выборки (количество чисел). \end{DoxyCompactList}\item 
+constexpr double \doxymbox{\hyperlink{main_8cpp_a2f728ac57e58866dedaba977e0ef28d9}{SIGNIFICANCE}} = 0.\+05
+\begin{DoxyCompactList}\small\item\em Уровень значимости для статистических тестов (alpha = 0.\+05). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{main_8cpp_doc-func-members}
+\Hypertarget{main_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_ad143486e425f8464d243e365b06bf682}\index{main.cpp@{main.cpp}!generateSamples@{generateSamples}}
+\index{generateSamples@{generateSamples}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{generateSamples()}{generateSamples()}}
+{\footnotesize\ttfamily \label{main_8cpp_ad143486e425f8464d243e365b06bf682} 
+template$<$typename Generator$>$ \\
+std::\+vector$<$ std::\+vector$<$ typename Generator::\+result\+\_\+type $>$ $>$ generate\+Samples (\begin{DoxyParamCaption}\item[{Generator \&}]{gen}{, }\item[{size\+\_\+t}]{num\+Samples}{, }\item[{size\+\_\+t}]{sample\+Size}{}\end{DoxyParamCaption})}
+
+
+
+Генерирует заданное количество выборок указанного размера. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Generator} & Тип генератора (должен иметь метод next()) \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em gen} & Генератор (передаётся по ссылке) \\
+\hline
+{\em num\+Samples} & Количество выборок \\
+\hline
+{\em sample\+Size} & Размер каждой выборки \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор векторов сгенерированных чисел 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_aa5cb588269a29c95fb1184b0df6c901e}\index{main.cpp@{main.cpp}!mean@{mean}}
+\index{mean@{mean}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{mean()}{mean()}}
+{\footnotesize\ttfamily \label{main_8cpp_aa5cb588269a29c95fb1184b0df6c901e} 
+template$<$typename T$>$ \\
+double mean (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ T $>$ \&}]{sample}{}\end{DoxyParamCaption})}
+
+
+
+Вычисляет выборочное среднее арифметическое. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Тип элементов выборки \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & Вектор значений \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Среднее арифметическое 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_a519e99d3d5187388ec19a20b9edeaf52}\index{main.cpp@{main.cpp}!measureTimes@{measureTimes}}
+\index{measureTimes@{measureTimes}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{measureTimes()}{measureTimes()}}
+{\footnotesize\ttfamily \label{main_8cpp_a519e99d3d5187388ec19a20b9edeaf52} 
+template$<$typename Generator$>$ \\
+std::\+vector$<$ uint64\+\_\+t $>$ measure\+Times (\begin{DoxyParamCaption}\item[{Generator \&}]{gen}{, }\item[{const std::\+vector$<$ size\+\_\+t $>$ \&}]{sizes}{}\end{DoxyParamCaption})}
+
+
+
+Замеряет время генерации заданного количества чисел. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Generator} & Тип генератора \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em gen} & Генератор (передаётся по ссылке) \\
+\hline
+{\em sizes} & Вектор объёмов выборок \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор времён в наносекундах 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_ab41ed6ebb77f6825cdc27d01014a7363}\index{main.cpp@{main.cpp}!printStats@{printStats}}
+\index{printStats@{printStats}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{printStats()}{printStats()}}
+{\footnotesize\ttfamily \label{main_8cpp_ab41ed6ebb77f6825cdc27d01014a7363} 
+template$<$typename T$>$ \\
+void print\+Stats (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{name}{, }\item[{const std::\+vector$<$ std::\+vector$<$ T $>$ $>$ \&}]{samples}{, }\item[{T}]{min\+Val}{, }\item[{T}]{max\+Val}{, }\item[{double}]{significance}{}\end{DoxyParamCaption})}
+
+
+
+Выводит статистики и результат хи-\/квадрат для каждой выборки. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Тип элементов выборки \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Имя генератора \\
+\hline
+{\em samples} & Вектор выборок \\
+\hline
+{\em min\+Val} & Минимальное значение генератора \\
+\hline
+{\em max\+Val} & Максимальное значение генератора \\
+\hline
+{\em significance} & Уровень значимости \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a2a020a313016106cd3a398cd49d7b3d8}\index{main.cpp@{main.cpp}!runNISTTests@{runNISTTests}}
+\index{runNISTTests@{runNISTTests}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{runNISTTests()}{runNISTTests()}}
+{\footnotesize\ttfamily \label{main_8cpp_a2a020a313016106cd3a398cd49d7b3d8} 
+template$<$typename T$>$ \\
+void run\+NISTTests (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{name}{, }\item[{const std::\+vector$<$ std::\+vector$<$ T $>$ $>$ \&}]{samples}{, }\item[{double}]{significance}{}\end{DoxyParamCaption})}
+
+
+
+Запускает пять тестов NIST на объединённой битовой последовательности. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Тип элементов выборки \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Имя генератора \\
+\hline
+{\em samples} & Вектор выборок \\
+\hline
+{\em significance} & Уровень значимости \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_adcae40314bf1cdb29ab7ff3e2695616a}\index{main.cpp@{main.cpp}!saveChiSquareSummary@{saveChiSquareSummary}}
+\index{saveChiSquareSummary@{saveChiSquareSummary}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{saveChiSquareSummary()}{saveChiSquareSummary()}}
+{\footnotesize\ttfamily \label{main_8cpp_adcae40314bf1cdb29ab7ff3e2695616a} 
+template$<$typename T$>$ \\
+void save\+Chi\+Square\+Summary (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filename}{, }\item[{const std::\+string \&}]{name}{, }\item[{const std::\+vector$<$ std::\+vector$<$ T $>$ $>$ \&}]{samples}{, }\item[{T}]{min\+Val}{, }\item[{T}]{max\+Val}{, }\item[{double}]{significance}{}\end{DoxyParamCaption})}
+
+
+
+Сохраняет сводку хи-\/квадрат тестов в CSV файл. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Тип элементов выборки \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Имя файла \\
+\hline
+{\em name} & Имя генератора \\
+\hline
+{\em samples} & Вектор выборок \\
+\hline
+{\em min\+Val} & Минимальное значение генератора \\
+\hline
+{\em max\+Val} & Максимальное значение генератора \\
+\hline
+{\em significance} & Уровень значимости \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a218606eb66883efb47abf244251d68e5}\index{main.cpp@{main.cpp}!saveCorrelationData@{saveCorrelationData}}
+\index{saveCorrelationData@{saveCorrelationData}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{saveCorrelationData()}{saveCorrelationData()}}
+{\footnotesize\ttfamily \label{main_8cpp_a218606eb66883efb47abf244251d68e5} 
+template$<$typename Generator$>$ \\
+void save\+Correlation\+Data (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filename}{, }\item[{Generator \&}]{gen}{, }\item[{size\+\_\+t}]{num\+Points}{ = {\ttfamily 1000}}\end{DoxyParamCaption})}
+
+
+
+Сохраняет пары последовательных чисел для построения графика корреляций. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Generator} & Тип генератора \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Имя файла \\
+\hline
+{\em gen} & Генератор \\
+\hline
+{\em num\+Points} & Количество точек \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a34561ddb2fdbd21579e9e989d49df8b5}\index{main.cpp@{main.cpp}!saveTimingsComparison@{saveTimingsComparison}}
+\index{saveTimingsComparison@{saveTimingsComparison}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{saveTimingsComparison()}{saveTimingsComparison()}}
+{\footnotesize\ttfamily \label{main_8cpp_a34561ddb2fdbd21579e9e989d49df8b5} 
+void save\+Timings\+Comparison (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filename}{, }\item[{const std::\+vector$<$ size\+\_\+t $>$ \&}]{sizes}{, }\item[{const std::\+vector$<$ uint64\+\_\+t $>$ \&}]{t1}{, }\item[{const std::\+vector$<$ uint64\+\_\+t $>$ \&}]{t2}{, }\item[{const std::\+vector$<$ uint64\+\_\+t $>$ \&}]{t3}{, }\item[{const std::\+vector$<$ uint64\+\_\+t $>$ \&}]{t4}{, }\item[{const std::\+vector$<$ uint64\+\_\+t $>$ \&}]{t5}{, }\item[{const std::\+vector$<$ uint64\+\_\+t $>$ \&}]{t6}{}\end{DoxyParamCaption})}
+
+
+
+Сохраняет результаты замеров времени для всех генераторов (модифицированные + стандартные). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Имя файла \\
+\hline
+{\em sizes} & Объёмы выборок \\
+\hline
+{\em t4} & Векторы времён \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a2c4f4bef28178fc092f2c348509c9635}\index{main.cpp@{main.cpp}!saveTimingsModified@{saveTimingsModified}}
+\index{saveTimingsModified@{saveTimingsModified}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{saveTimingsModified()}{saveTimingsModified()}}
+{\footnotesize\ttfamily \label{main_8cpp_a2c4f4bef28178fc092f2c348509c9635} 
+void save\+Timings\+Modified (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filename}{, }\item[{const std::\+vector$<$ size\+\_\+t $>$ \&}]{sizes}{, }\item[{const std::\+vector$<$ uint64\+\_\+t $>$ \&}]{t1}{, }\item[{const std::\+vector$<$ uint64\+\_\+t $>$ \&}]{t2}{, }\item[{const std::\+vector$<$ uint64\+\_\+t $>$ \&}]{t3}{, }\item[{const std::\+vector$<$ uint64\+\_\+t $>$ \&}]{t4}{}\end{DoxyParamCaption})}
+
+
+
+Сохраняет результаты замеров времени для модифицированных + mt19937\+\_\+64. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Имя файла \\
+\hline
+{\em sizes} & Объёмы выборок \\
+\hline
+{\em t1} & \doxylink{class_m_l_c_g___x_o_r}{MLCG\+\_\+\+XOR} \\
+\hline
+{\em t2} & \doxylink{class_l_f_g___x_o_r}{LFG\+\_\+\+XOR} \\
+\hline
+{\em t3} & \doxylink{class_xorshift128___m_l_t}{Xorshift128\+\_\+\+MLT} \\
+\hline
+{\em t4} & mt19937\+\_\+64 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a863a7a75b18c4556a2b994572dadd835}\index{main.cpp@{main.cpp}!stddev@{stddev}}
+\index{stddev@{stddev}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{stddev()}{stddev()}}
+{\footnotesize\ttfamily \label{main_8cpp_a863a7a75b18c4556a2b994572dadd835} 
+template$<$typename T$>$ \\
+double stddev (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ T $>$ \&}]{sample}{}\end{DoxyParamCaption})}
+
+
+
+Вычисляет выборочное стандартное отклонение. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Тип элементов выборки \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & Вектор значений \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Стандартное отклонение 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_a33e64edf9fe1ee08f1627ff4c0224f0f}\index{main.cpp@{main.cpp}!testSeedDependency@{testSeedDependency}}
+\index{testSeedDependency@{testSeedDependency}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{testSeedDependency()}{testSeedDependency()}}
+{\footnotesize\ttfamily \label{main_8cpp_a33e64edf9fe1ee08f1627ff4c0224f0f} 
+template$<$typename Generator$>$ \\
+void test\+Seed\+Dependency (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ uint64\+\_\+t $>$ \&}]{seeds}{, }\item[{const std::\+string \&}]{gen\+Name}{, }\item[{size\+\_\+t}]{num\+Samples}{, }\item[{size\+\_\+t}]{sample\+Size}{, }\item[{typename Generator::\+result\+\_\+type}]{min\+Val}{, }\item[{typename Generator::\+result\+\_\+type}]{max\+Val}{, }\item[{double}]{significance}{, }\item[{const std::\+string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Тестирует генератор с разными seed (включая плохие) и сохраняет результат хи-\/квадрат. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Generator} & Тип генератора \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em seeds} & Вектор seed-\/значений для тестирования \\
+\hline
+{\em gen\+Name} & Имя генератора (для вывода и имени файла) \\
+\hline
+{\em num\+Samples} & Количество выборок на каждый seed \\
+\hline
+{\em sample\+Size} & Размер каждой выборки \\
+\hline
+{\em min\+Val} & Минимальное значение генератора \\
+\hline
+{\em max\+Val} & Максимальное значение генератора \\
+\hline
+{\em significance} & Уровень значимости \\
+\hline
+{\em filename} & CSV-\/файл для сохранения результатов \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a7ab1c9e62de2e6750aa38d23bb7043d9}\index{main.cpp@{main.cpp}!toBits@{toBits}}
+\index{toBits@{toBits}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{toBits()}{toBits()}}
+{\footnotesize\ttfamily \label{main_8cpp_a7ab1c9e62de2e6750aa38d23bb7043d9} 
+template$<$typename T$>$ \\
+std::\+vector$<$ bool $>$ to\+Bits (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ T $>$ \&}]{sample}{, }\item[{int}]{bits\+Per\+Number}{}\end{DoxyParamCaption})}
+
+
+
+Преобразует вектор целых чисел в битовую последовательность. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Целочисленный тип \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & Вектор чисел \\
+\hline
+{\em bits\+Per\+Number} & Сколько младших битов использовать \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Вектор битов (bool) 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_a11a8e028b717b4cd12faf4973951b0fe}\index{main.cpp@{main.cpp}!variability@{variability}}
+\index{variability@{variability}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{variability()}{variability()}}
+{\footnotesize\ttfamily \label{main_8cpp_a11a8e028b717b4cd12faf4973951b0fe} 
+template$<$typename T$>$ \\
+double variability (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ T $>$ \&}]{sample}{}\end{DoxyParamCaption})}
+
+
+
+Вычисляет коэффициент вариации (CV = stddev /\+ mean). 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Тип элементов выборки \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & Вектор значений \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Коэффициент вариации 
+\end{DoxyReturn}
+
+
+\label{main_8cpp_doc-var-members}
+\Hypertarget{main_8cpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8cpp_ad094e86a392c31469d0271b35c1fa37d}\index{main.cpp@{main.cpp}!NUM\_SAMPLES@{NUM\_SAMPLES}}
+\index{NUM\_SAMPLES@{NUM\_SAMPLES}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{NUM\_SAMPLES}{NUM\_SAMPLES}}
+{\footnotesize\ttfamily \label{main_8cpp_ad094e86a392c31469d0271b35c1fa37d} 
+size\+\_\+t NUM\+\_\+\+SAMPLES = 20\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Количество выборок для статистического анализа 
+
+\Hypertarget{main_8cpp_a887ae97354788af2d4b0e3306f53ce8b}\index{main.cpp@{main.cpp}!SAMPLE\_SIZE@{SAMPLE\_SIZE}}
+\index{SAMPLE\_SIZE@{SAMPLE\_SIZE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_SIZE}{SAMPLE\_SIZE}}
+{\footnotesize\ttfamily \label{main_8cpp_a887ae97354788af2d4b0e3306f53ce8b} 
+size\+\_\+t SAMPLE\+\_\+\+SIZE = 20000\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Размер каждой выборки (количество чисел). 
+
+\Hypertarget{main_8cpp_a2f728ac57e58866dedaba977e0ef28d9}\index{main.cpp@{main.cpp}!SIGNIFICANCE@{SIGNIFICANCE}}
+\index{SIGNIFICANCE@{SIGNIFICANCE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SIGNIFICANCE}{SIGNIFICANCE}}
+{\footnotesize\ttfamily \label{main_8cpp_a2f728ac57e58866dedaba977e0ef28d9} 
+double SIGNIFICANCE = 0.\+05\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Уровень значимости для статистических тестов (alpha = 0.\+05). 
+

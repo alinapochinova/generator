@@ -1,0 +1,159 @@
+\doxysection{LCG\+\_\+\+Standart Class Reference}
+\hypertarget{class_l_c_g___standart}{}\label{class_l_c_g___standart}\index{LCG\_Standart@{LCG\_Standart}}
+
+
+Классический линейный конгруэнтный генератор (LCG) без модификаций.  
+
+
+
+
+{\ttfamily \+\#include $<$standart\+\_\+generators.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \doxymbox{\hyperlink{class_l_c_g___standart_a7738689a1e46372a51d86ad9a08fa8b9}{result\+\_\+type}} = uint64\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_l_c_g___standart_ae17fb6964125c4f38ae16077cdaa89c7}{LCG\+\_\+\+Standart}} (uint64\+\_\+t seed=123456789)
+\begin{DoxyCompactList}\small\item\em Конструктор. \end{DoxyCompactList}\item 
+uint64\+\_\+t \doxymbox{\hyperlink{class_l_c_g___standart_ab56c601570dce380fb3aebe96b349833}{next}} ()
+\begin{DoxyCompactList}\small\item\em Генерирует следующее 64-\/битное псевдослучайное число. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr uint64\+\_\+t \doxymbox{\hyperlink{class_l_c_g___standart_a6b4dc51f6645e6e64c09ca38bb063bc8}{min}} ()
+\item 
+static constexpr uint64\+\_\+t \doxymbox{\hyperlink{class_l_c_g___standart_a80918fab5edeffb6811089494ce1f313}{max}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \doxymbox{\hyperlink{class_l_c_g___standart_a4051f73f6eddc8e80f67fa13dd1e632a}{state}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr uint64\+\_\+t \doxymbox{\hyperlink{class_l_c_g___standart_a72c91567f69efb621e66adde1c9cddec}{A}} = 0x9e3779b97f4a7c15\+ULL
+\item 
+static constexpr uint64\+\_\+t \doxymbox{\hyperlink{class_l_c_g___standart_a3a200e7dddd7e934b365c760b3cbdbe4}{C}} = 0xbf58476d1ce4e5b9\+ULL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Классический линейный конгруэнтный генератор (LCG) без модификаций. 
+
+Формула:\+ state = A \texorpdfstring{$\ast$}{*} state + C mod 2\texorpdfstring{$^\wedge$}{\string^}64. Параметры A и C выбраны так же, как в модифицированной версии, но без пост-\/перемешивания (XOR со сдвигами).
+
+\begin{DoxyNote}{Note}
+Период:\+ 2\texorpdfstring{$^\wedge$}{\string^}64 при правильных параметрах. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Младшие биты имеют короткий период, есть корреляции между соседними числами.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_m_l_c_g___x_o_r}{MLCG\+\_\+\+XOR} – модифицированная версия с перемешиванием 
+\end{DoxySeeAlso}
+
+
+\label{class_l_c_g___standart_doc-typedef-members}
+\Hypertarget{class_l_c_g___standart_doc-typedef-members}
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_l_c_g___standart_a7738689a1e46372a51d86ad9a08fa8b9}\index{LCG\_Standart@{LCG\_Standart}!result\_type@{result\_type}}
+\index{result\_type@{result\_type}!LCG\_Standart@{LCG\_Standart}}
+\doxysubsubsection{\texorpdfstring{result\_type}{result\_type}}
+{\footnotesize\ttfamily \label{class_l_c_g___standart_a7738689a1e46372a51d86ad9a08fa8b9} 
+using \doxymbox{\hyperlink{class_l_c_g___standart_a7738689a1e46372a51d86ad9a08fa8b9}{LCG\+\_\+\+Standart::\+result\+\_\+type}} = uint64\+\_\+t}
+
+
+
+\label{class_l_c_g___standart_doc-constructors}
+\Hypertarget{class_l_c_g___standart_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_l_c_g___standart_ae17fb6964125c4f38ae16077cdaa89c7}\index{LCG\_Standart@{LCG\_Standart}!LCG\_Standart@{LCG\_Standart}}
+\index{LCG\_Standart@{LCG\_Standart}!LCG\_Standart@{LCG\_Standart}}
+\doxysubsubsection{\texorpdfstring{LCG\_Standart()}{LCG\_Standart()}}
+{\footnotesize\ttfamily \label{class_l_c_g___standart_ae17fb6964125c4f38ae16077cdaa89c7} 
+LCG\+\_\+\+Standart::\+\+LCG\+\_\+\+Standart (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{seed}{ = {\ttfamily 123456789}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор. 
+
+Конструктор \doxylink{class_l_c_g___standart}{LCG\+\_\+\+Standart}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & Начальное значение (по умолчанию 123456789)\\
+\hline
+{\em seed} & Начальное значение состояния.\\
+\hline
+\end{DoxyParams}
+Инициализирует внутреннее состояние заданным seed. Состояние будет обновляться по формуле LCG при каждом вызове \doxylink{class_l_c_g___standart_ab56c601570dce380fb3aebe96b349833}{next()}. 
+
+\label{class_l_c_g___standart_doc-func-members}
+\Hypertarget{class_l_c_g___standart_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_l_c_g___standart_a80918fab5edeffb6811089494ce1f313}\index{LCG\_Standart@{LCG\_Standart}!max@{max}}
+\index{max@{max}!LCG\_Standart@{LCG\_Standart}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily \label{class_l_c_g___standart_a80918fab5edeffb6811089494ce1f313} 
+constexpr uint64\+\_\+t LCG\+\_\+\+Standart::\+max (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{class_l_c_g___standart_a6b4dc51f6645e6e64c09ca38bb063bc8}\index{LCG\_Standart@{LCG\_Standart}!min@{min}}
+\index{min@{min}!LCG\_Standart@{LCG\_Standart}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily \label{class_l_c_g___standart_a6b4dc51f6645e6e64c09ca38bb063bc8} 
+constexpr uint64\+\_\+t LCG\+\_\+\+Standart::\+min (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{class_l_c_g___standart_ab56c601570dce380fb3aebe96b349833}\index{LCG\_Standart@{LCG\_Standart}!next@{next}}
+\index{next@{next}!LCG\_Standart@{LCG\_Standart}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \label{class_l_c_g___standart_ab56c601570dce380fb3aebe96b349833} 
+uint64\+\_\+t LCG\+\_\+\+Standart::\+next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Генерирует следующее 64-\/битное псевдослучайное число. 
+
+Генерация следующего 64-\/битного числа.
+
+\begin{DoxyReturn}{Returns}
+Очередное значение LCG без пост-\/обработки.
+\end{DoxyReturn}
+Выполняется классический LCG шаг:\+ state = A \texorpdfstring{$\ast$}{*} state + C. Переполнение uint64\+\_\+t автоматически даёт модуль 2\texorpdfstring{$^\wedge$}{\string^}64.
+
+\begin{DoxyNote}{Note}
+Отсутствие перемешивания приводит к корреляции младших битов. 
+\end{DoxyNote}
+
+
+\label{class_l_c_g___standart_doc-variable-members}
+\Hypertarget{class_l_c_g___standart_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_l_c_g___standart_a72c91567f69efb621e66adde1c9cddec}\index{LCG\_Standart@{LCG\_Standart}!A@{A}}
+\index{A@{A}!LCG\_Standart@{LCG\_Standart}}
+\doxysubsubsection{\texorpdfstring{A}{A}}
+{\footnotesize\ttfamily \label{class_l_c_g___standart_a72c91567f69efb621e66adde1c9cddec} 
+uint64\+\_\+t LCG\+\_\+\+Standart::\+A = 0x9e3779b97f4a7c15\+ULL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{class_l_c_g___standart_a3a200e7dddd7e934b365c760b3cbdbe4}\index{LCG\_Standart@{LCG\_Standart}!C@{C}}
+\index{C@{C}!LCG\_Standart@{LCG\_Standart}}
+\doxysubsubsection{\texorpdfstring{C}{C}}
+{\footnotesize\ttfamily \label{class_l_c_g___standart_a3a200e7dddd7e934b365c760b3cbdbe4} 
+uint64\+\_\+t LCG\+\_\+\+Standart::\+C = 0xbf58476d1ce4e5b9\+ULL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\Hypertarget{class_l_c_g___standart_a4051f73f6eddc8e80f67fa13dd1e632a}\index{LCG\_Standart@{LCG\_Standart}!state@{state}}
+\index{state@{state}!LCG\_Standart@{LCG\_Standart}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \label{class_l_c_g___standart_a4051f73f6eddc8e80f67fa13dd1e632a} 
+uint64\+\_\+t LCG\+\_\+\+Standart::\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{standart__generators_8hpp}{standart\+\_\+generators.\+hpp}}\item 
+\doxymbox{\hyperlink{standart__generators_8cpp}{standart\+\_\+generators.\+cpp}}\end{DoxyCompactItemize}

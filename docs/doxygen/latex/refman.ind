@@ -1,0 +1,282 @@
+\begin{theindex}
+
+  \item {A}
+    \subitem {LCG\_Standart}, \hyperpage{22}
+    \subitem {MLCG\_XOR}, \hyperpage{33}
+
+  \indexspace
+
+  \item {BlockFrequencyTest}
+    \subitem {nist::BlockFrequencyTest}, \hyperpage{18}
+  \item {buffer}
+    \subitem {LFG\_Standart}, \hyperpage{25}
+    \subitem {LFG\_XOR}, \hyperpage{29}
+
+  \indexspace
+
+  \item {C}
+    \subitem {LCG\_Standart}, \hyperpage{22}
+    \subitem {MLCG\_XOR}, \hyperpage{33}
+  \item {chi\_squar.hpp}, \hyperpage{41}
+  \item {chi\_squared}
+    \subitem {custom}, \hyperpage{14}
+  \item {chi\_squared\_test}
+    \subitem {custom}, \hyperpage{14}
+  \item {CumulativeSumsTest}
+    \subitem {nist::CumulativeSumsTest}, \hyperpage{19}
+  \item {custom}, \hyperpage{13}
+    \subitem {chi\_squared}, \hyperpage{14}
+    \subitem {chi\_squared\_test}, \hyperpage{14}
+    \subitem {DistributionType}, \hyperpage{13}
+    \subitem {UNIFORM\_INT}, \hyperpage{13}
+    \subitem {UNIFORM\_REAL}, \hyperpage{13}
+
+  \indexspace
+
+  \item {DistributionType}
+    \subitem {custom}, \hyperpage{13}
+
+  \indexspace
+
+  \item {erfc}
+    \subitem {nist}, \hyperpage{16}
+
+  \indexspace
+
+  \item {FrequencyTest}
+    \subitem {nist::FrequencyTest}, \hyperpage{20}
+
+  \indexspace
+
+  \item {generateSamples}
+    \subitem {main.cpp}, \hyperpage{45}
+
+  \indexspace
+
+  \item {index}
+    \subitem {LFG\_Standart}, \hyperpage{25}
+    \subitem {LFG\_XOR}, \hyperpage{29}
+  \item {initBuffer}
+    \subitem {LFG\_Standart}, \hyperpage{24}
+    \subitem {LFG\_XOR}, \hyperpage{27}
+
+  \indexspace
+
+  \item {LAG1}
+    \subitem {LFG\_Standart}, \hyperpage{25}
+    \subitem {LFG\_XOR}, \hyperpage{29}
+  \item {LAG2}
+    \subitem {LFG\_Standart}, \hyperpage{25}
+    \subitem {LFG\_XOR}, \hyperpage{29}
+  \item {LCG\_Standart}, \hyperpage{20}
+    \subitem {A}, \hyperpage{22}
+    \subitem {C}, \hyperpage{22}
+    \subitem {LCG\_Standart}, \hyperpage{21}
+    \subitem {max}, \hyperpage{22}
+    \subitem {min}, \hyperpage{22}
+    \subitem {next}, \hyperpage{22}
+    \subitem {result\_type}, \hyperpage{21}
+    \subitem {state}, \hyperpage{22}
+  \item {LFG\_Standart}, \hyperpage{23}
+    \subitem {buffer}, \hyperpage{25}
+    \subitem {index}, \hyperpage{25}
+    \subitem {initBuffer}, \hyperpage{24}
+    \subitem {LAG1}, \hyperpage{25}
+    \subitem {LAG2}, \hyperpage{25}
+    \subitem {LFG\_Standart}, \hyperpage{24}
+    \subitem {max}, \hyperpage{24}
+    \subitem {min}, \hyperpage{25}
+    \subitem {next}, \hyperpage{25}
+    \subitem {result\_type}, \hyperpage{24}
+  \item {LFG\_XOR}, \hyperpage{26}
+    \subitem {buffer}, \hyperpage{29}
+    \subitem {index}, \hyperpage{29}
+    \subitem {initBuffer}, \hyperpage{27}
+    \subitem {LAG1}, \hyperpage{29}
+    \subitem {LAG2}, \hyperpage{29}
+    \subitem {LFG\_XOR}, \hyperpage{27}
+    \subitem {max}, \hyperpage{28}
+    \subitem {min}, \hyperpage{28}
+    \subitem {next}, \hyperpage{28}
+    \subitem {result\_type}, \hyperpage{27}
+    \subitem {scramble}, \hyperpage{28}
+  \item {LongestRunTest}
+    \subitem {nist::LongestRunTest}, \hyperpage{30}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{45}
+  \item {main.cpp}, \hyperpage{43}
+    \subitem {generateSamples}, \hyperpage{45}
+    \subitem {main}, \hyperpage{45}
+    \subitem {mean}, \hyperpage{45}
+    \subitem {measureTimes}, \hyperpage{45}
+    \subitem {NUM\_SAMPLES}, \hyperpage{51}
+    \subitem {printStats}, \hyperpage{46}
+    \subitem {runNISTTests}, \hyperpage{46}
+    \subitem {SAMPLE\_SIZE}, \hyperpage{51}
+    \subitem {saveChiSquareSummary}, \hyperpage{47}
+    \subitem {saveCorrelationData}, \hyperpage{47}
+    \subitem {saveTimingsComparison}, \hyperpage{48}
+    \subitem {saveTimingsModified}, \hyperpage{48}
+    \subitem {SIGNIFICANCE}, \hyperpage{51}
+    \subitem {stddev}, \hyperpage{49}
+    \subitem {testSeedDependency}, \hyperpage{49}
+    \subitem {toBits}, \hyperpage{50}
+    \subitem {variability}, \hyperpage{50}
+  \item {max}
+    \subitem {LCG\_Standart}, \hyperpage{22}
+    \subitem {LFG\_Standart}, \hyperpage{24}
+    \subitem {LFG\_XOR}, \hyperpage{28}
+    \subitem {MLCG\_XOR}, \hyperpage{32}
+    \subitem {Xorshift128\_MLT}, \hyperpage{35}
+    \subitem {Xorshift128\_Standart}, \hyperpage{38}
+  \item {mean}
+    \subitem {main.cpp}, \hyperpage{45}
+  \item {measureTimes}
+    \subitem {main.cpp}, \hyperpage{45}
+  \item {min}
+    \subitem {LCG\_Standart}, \hyperpage{22}
+    \subitem {LFG\_Standart}, \hyperpage{25}
+    \subitem {LFG\_XOR}, \hyperpage{28}
+    \subitem {MLCG\_XOR}, \hyperpage{32}
+    \subitem {Xorshift128\_MLT}, \hyperpage{35}
+    \subitem {Xorshift128\_Standart}, \hyperpage{38}
+  \item {MLCG\_XOR}, \hyperpage{30}
+    \subitem {A}, \hyperpage{33}
+    \subitem {C}, \hyperpage{33}
+    \subitem {max}, \hyperpage{32}
+    \subitem {min}, \hyperpage{32}
+    \subitem {MLCG\_XOR}, \hyperpage{32}
+    \subitem {next}, \hyperpage{32}
+    \subitem {result\_type}, \hyperpage{31}
+    \subitem {state}, \hyperpage{33}
+  \item {modified\_generators.cpp}, \hyperpage{51}
+  \item {modified\_generators.hpp}, \hyperpage{52}
+
+  \indexspace
+
+  \item {next}
+    \subitem {LCG\_Standart}, \hyperpage{22}
+    \subitem {LFG\_Standart}, \hyperpage{25}
+    \subitem {LFG\_XOR}, \hyperpage{28}
+    \subitem {MLCG\_XOR}, \hyperpage{32}
+    \subitem {Xorshift128\_MLT}, \hyperpage{35}
+    \subitem {Xorshift128\_Standart}, \hyperpage{38}
+  \item {nist}, \hyperpage{15}
+    \subitem {erfc}, \hyperpage{16}
+  \item {nist::BlockFrequencyTest}, \hyperpage{17}
+    \subitem {BlockFrequencyTest}, \hyperpage{18}
+    \subitem {p\_value}, \hyperpage{18}
+  \item {nist::CumulativeSumsTest}, \hyperpage{18}
+    \subitem {CumulativeSumsTest}, \hyperpage{19}
+    \subitem {p\_value}, \hyperpage{19}
+  \item {nist::FrequencyTest}, \hyperpage{19}
+    \subitem {FrequencyTest}, \hyperpage{20}
+    \subitem {p\_value}, \hyperpage{20}
+  \item {nist::LongestRunTest}, \hyperpage{30}
+    \subitem {LongestRunTest}, \hyperpage{30}
+    \subitem {p\_value}, \hyperpage{30}
+  \item {nist::RunsTest}, \hyperpage{33}
+    \subitem {p\_value}, \hyperpage{34}
+    \subitem {RunsTest}, \hyperpage{34}
+  \item {nist\_test.hpp}, \hyperpage{53}
+  \item {NUM\_SAMPLES}
+    \subitem {main.cpp}, \hyperpage{51}
+
+  \indexspace
+
+  \item {p\_value}
+    \subitem {nist::BlockFrequencyTest}, \hyperpage{18}
+    \subitem {nist::CumulativeSumsTest}, \hyperpage{19}
+    \subitem {nist::FrequencyTest}, \hyperpage{20}
+    \subitem {nist::LongestRunTest}, \hyperpage{30}
+    \subitem {nist::RunsTest}, \hyperpage{34}
+  \item {printStats}
+    \subitem {main.cpp}, \hyperpage{46}
+
+  \indexspace
+
+  \item {result\_type}
+    \subitem {LCG\_Standart}, \hyperpage{21}
+    \subitem {LFG\_Standart}, \hyperpage{24}
+    \subitem {LFG\_XOR}, \hyperpage{27}
+    \subitem {MLCG\_XOR}, \hyperpage{31}
+    \subitem {Xorshift128\_MLT}, \hyperpage{35}
+    \subitem {Xorshift128\_Standart}, \hyperpage{37}
+  \item {runNISTTests}
+    \subitem {main.cpp}, \hyperpage{46}
+  \item {RunsTest}
+    \subitem {nist::RunsTest}, \hyperpage{34}
+
+  \indexspace
+
+  \item {s}
+    \subitem {Xorshift128\_MLT}, \hyperpage{36}
+    \subitem {Xorshift128\_Standart}, \hyperpage{39}
+  \item {SAMPLE\_SIZE}
+    \subitem {main.cpp}, \hyperpage{51}
+  \item {saveChiSquareSummary}
+    \subitem {main.cpp}, \hyperpage{47}
+  \item {saveCorrelationData}
+    \subitem {main.cpp}, \hyperpage{47}
+  \item {saveTimingsComparison}
+    \subitem {main.cpp}, \hyperpage{48}
+  \item {saveTimingsModified}
+    \subitem {main.cpp}, \hyperpage{48}
+  \item {scramble}
+    \subitem {LFG\_XOR}, \hyperpage{28}
+  \item {SIGNIFICANCE}
+    \subitem {main.cpp}, \hyperpage{51}
+  \item {standart\_generators.cpp}, \hyperpage{57}
+  \item {standart\_generators.hpp}, \hyperpage{57}
+  \item {state}
+    \subitem {LCG\_Standart}, \hyperpage{22}
+    \subitem {MLCG\_XOR}, \hyperpage{33}
+  \item {stddev}
+    \subitem {main.cpp}, \hyperpage{49}
+
+  \indexspace
+
+  \item {testSeedDependency}
+    \subitem {main.cpp}, \hyperpage{49}
+  \item {toBits}
+    \subitem {main.cpp}, \hyperpage{50}
+
+  \indexspace
+
+  \item {UNIFORM\_INT}
+    \subitem {custom}, \hyperpage{13}
+  \item {UNIFORM\_REAL}
+    \subitem {custom}, \hyperpage{13}
+
+  \indexspace
+
+  \item {variability}
+    \subitem {main.cpp}, \hyperpage{50}
+
+  \indexspace
+
+  \item {warmup}
+    \subitem {Xorshift128\_Standart}, \hyperpage{38}
+
+  \indexspace
+
+  \item {Xorshift128\_MLT}, \hyperpage{34}
+    \subitem {max}, \hyperpage{35}
+    \subitem {min}, \hyperpage{35}
+    \subitem {next}, \hyperpage{35}
+    \subitem {result\_type}, \hyperpage{35}
+    \subitem {s}, \hyperpage{36}
+    \subitem {Xorshift128\_MLT}, \hyperpage{35}
+  \item {Xorshift128\_Standart}, \hyperpage{36}
+    \subitem {max}, \hyperpage{38}
+    \subitem {min}, \hyperpage{38}
+    \subitem {next}, \hyperpage{38}
+    \subitem {result\_type}, \hyperpage{37}
+    \subitem {s}, \hyperpage{39}
+    \subitem {warmup}, \hyperpage{38}
+    \subitem {Xorshift128\_Standart}, \hyperpage{38}
+
+\end{theindex}

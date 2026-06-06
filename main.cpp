@@ -19,7 +19,7 @@ constexpr size_t NUM_SAMPLES = 20;
 /** @brief Размер каждой выборки (количество чисел) */
 constexpr size_t SAMPLE_SIZE = 20000;
 
-/** @brief Уровень значимости для статистических тестов (α = 0.05) */
+/** @brief Уровень значимости для статистических тестов (alpha = 0.05) */
 constexpr double SIGNIFICANCE = 0.05;
 
 /**

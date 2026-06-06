@@ -1,5 +1,0 @@
-var searchData=
-[
-  ['chi_5fsquared_0',['chi_squared',['../chi__squar_8hpp.html#aeaf50ca8e1ffb6be2c87e235e1620717',1,'custom']]],
-  ['chi_5fsquared_5ftest_1',['chi_squared_test',['../chi__squar_8hpp.html#aa29ff4e045ea5489e56db6fecbfb540e',1,'custom']]]
-];

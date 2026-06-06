@@ -88,8 +88,8 @@ std::pair<double, std::size_t> chi_squared(const std::vector<Number>& sample,
     }
 
     // Вычисление статистики хи-квадрат
-    // χ² = Σ (obs_i - exp_i)^2 / exp_i
-    // Возвращаем χ² и степени свободы df = k - 1
+    // chi-squared = sum (obs_i - exp_i)^2 / exp_i
+    // Возвращаем chi-squared и степени свободы df = k - 1
     double chi = 0.0;
     for (size_t i = 0; i < num_buckets; ++i) {
         double expected = p_unif[i] * sample.size();
@@ -120,16 +120,16 @@ bool chi_squared_test(const std::vector<Number>& sample,
         throw std::invalid_argument(oss.str());
     }
 
-    //Вычисляем χ² и df с помощью chi_squared
+    //Вычисляем chi-squared и df с помощью chi_squared
     auto [chi, df] = chi_squared(sample, min, max, type);
 
     // Для больших df используем нормальную аппроксимацию (центральная предельная теорема)
-    // χ² приблизительно нормально с параметрами df, 2df
-    // Возвращаем true, если p-value > significance (или если χ² меньше критического значения)
+    // chi-squared приблизительно нормально с параметрами df, 2df
+    // Возвращаем true, если p-value > significance (или если chi-squared меньше критического значения)
     if (df > 30) {
-        // Нормированное отклонение: (χ² - df) / √(2df)
+        // Нормированное отклонение: (chi-squared - df) / sqrt(2df)
         double z = (chi - df) / std::sqrt(2 * df);
-        // p-value = 1 - Φ(z) = 0.5 * erfc(z / √2)
+        // p-value = 1 - Phi(z) = 0.5 * erfc(z / sqrt2)
         // Ф — функция распределения стандартного нормального закона
         double p = 0.5 * std::erfc(z / std::sqrt(2.0));
         return p > significance;
@@ -139,7 +139,7 @@ bool chi_squared_test(const std::vector<Number>& sample,
         if (df <= 10)
             return chi <= critical[df - 1];
         else
-            // Приближённая формула для df > 10 (до 30): χ² ≤ df + 2√(2df)
+            // Приближённая формула для df > 10 (до 30): chi-squared le df + 2sqrt(2df)
             return chi <= df + 2 * std::sqrt(2 * df);
     }
 }
